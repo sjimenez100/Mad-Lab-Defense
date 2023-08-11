@@ -69,6 +69,7 @@ public class Projectile : MonoBehaviour, IColorable
                     return; // <-- lmao funny line
                 }
 
+                AudioManager.main.PlaySound("BadHit");
                 ConfigureBreakingAnimation();
                 PreDestruction();
             }

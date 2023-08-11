@@ -18,10 +18,15 @@ public class Leaderboard : MonoBehaviour
 
     private static string publicKey = "33ca69f3d57a3f9dc79e5137a28040de34c48f99bbbd1afa7a82349adcb111bf";
 
+    private void OnEnable()
+    {
+        
+        EventManager.main.gameOverEvent += GetLeaderboard;
+    }
 
     private void Start()
     {
-        GetLeaderboard();
+        GetLeaderboard(); // called twice incase first one fails
     }
 
     public void GetLeaderboard()

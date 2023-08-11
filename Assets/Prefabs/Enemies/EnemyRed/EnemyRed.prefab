@@ -242,5 +242,5 @@ MonoBehaviour:
   animator: {fileID: 3928856047649685596}
   sprite: {fileID: 2381808747262092135}
   speedMultiple: 1
-  setDamage: 20
+  setDamage: 15
   setColor: 0

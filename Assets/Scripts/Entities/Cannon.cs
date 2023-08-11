@@ -23,6 +23,8 @@ public class Cannon : Entity, IDamageable
 
     public float Health { get; set; }
 
+    private bool killed;
+
     void Awake()
     {
         Health = initialHealth;
@@ -62,6 +64,11 @@ public class Cannon : Entity, IDamageable
 
     public void TakeDamage(float damage)
     {
+
+        if (killed)
+            return;
+
+        AudioManager.main.PlaySound("PlayerDamaged");
         EventManager.main.OnPlayerDamaged(damage);
 
         float newHealth = Health - damage;
@@ -78,7 +85,12 @@ public class Cannon : Entity, IDamageable
 
     public override void Kill()
     {
+        killed = true;
+
         EventManager.main.OnPlayerKill();
+
+        AudioManager.main.PlaySound("PlayerDeath");
+
         EventManager.main.OnGameOver();
         
     }
@@ -117,6 +129,7 @@ public class Cannon : Entity, IDamageable
 
         EventManager.main.OnChangeColor(id);
 
+        AudioManager.main.PlaySound("ChangeAmmo");
         //Debug.Log($"{(Color.ColorType)id} Selected");
 
         currentColor = (Color.ColorType)id;
@@ -130,6 +143,8 @@ public class Cannon : Entity, IDamageable
             firingTransform.position, firingTransform.rotation, transform);
 
         projectile.GetComponent<Projectile>().Push(firingTransform.right);
+
+        AudioManager.main.PlaySound("CannonFire");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

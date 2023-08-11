@@ -122,7 +122,7 @@ MonoBehaviour:
   animator: {fileID: 5457582328197284424}
   setColor: 2
   speed: 20
-  despawnTime: 3
+  despawnTime: 0.65
 --- !u!1 &6590115997843914329
 GameObject:
   m_ObjectHideFlags: 0

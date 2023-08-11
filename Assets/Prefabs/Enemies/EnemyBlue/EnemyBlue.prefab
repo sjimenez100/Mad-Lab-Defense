@@ -122,7 +122,7 @@ MonoBehaviour:
   animator: {fileID: 9128345341590563624}
   sprite: {fileID: 2664338415369935441}
   speedMultiple: 1
-  setDamage: 20
+  setDamage: 15
   setColor: 2
 --- !u!1 &8390534721447252269
 GameObject:

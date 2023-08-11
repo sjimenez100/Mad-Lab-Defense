@@ -29,8 +29,13 @@ public abstract class SpawnEntity : Entity
         EventManager.main.OnSpawnEntityKill();
 
         // stop movement and disable collision
-        StopCoroutine(movementRoutine);
+        if (movementRoutine is not null)
+            StopCoroutine(movementRoutine);
+
         collider.enabled = false;
+
+        AudioManager.main.PlaySound("SpawnableDeath");
+
         base.Kill();
 
     }

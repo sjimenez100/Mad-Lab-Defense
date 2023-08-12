@@ -5,15 +5,16 @@ public class SceneHandler : MonoBehaviour
 {
     public static SceneHandler main;
 
-    private void Awake()
+    public void Awake()
     {
-        main = this;
+        Time.timeScale= 1.0f;
     }
-
 
     public void NextScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     public void PreviousScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+    public void RestartScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     public void MainMenu() => SceneManager.LoadScene("TitleScreen");
 

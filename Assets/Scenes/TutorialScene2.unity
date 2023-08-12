@@ -476,6 +476,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1790911718}
+        m_TargetAssemblyTypeName: RetainedAudioAssistant, Assembly-CSharp
+        m_MethodName: PlaySoundOnRetainedManager
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ButtonPressed
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1790911717}
         m_TargetAssemblyTypeName: SceneHandler, Assembly-CSharp
         m_MethodName: MainMenu
@@ -927,7 +939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Move the cannon and cahnge the ammo type to kill the Enemy
+  m_text: TIPS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d823c8e5b25c33f4f8766503ce2877b5, type: 2}
   m_sharedMaterial: {fileID: -3914164321439017826, guid: d823c8e5b25c33f4f8766503ce2877b5, type: 2}
@@ -954,14 +966,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1203,6 +1215,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f29d5da14a334234c8836fec8398412d, type: 3}
+--- !u!1001 &1229517718
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1579170438663876268, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210590188665137961, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210590188665137961, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210590188665137961, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210590188665137961, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210590188665137961, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210590188665137961, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210590188665137961, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210590188665137961, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210590188665137961, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210590188665137961, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
 --- !u!1 &1411748193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +1643,7 @@ GameObject:
   - component: {fileID: 1790911715}
   - component: {fileID: 1790911714}
   - component: {fileID: 1790911717}
+  - component: {fileID: 1790911718}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1630,6 +1700,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f2f68a829cc0ac4ea2c20f14976f0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1790911718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790911712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00282c52202b38b4f878aaa5e6aa1b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1910302511
@@ -1715,6 +1797,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1790911718}
+        m_TargetAssemblyTypeName: RetainedAudioAssistant, Assembly-CSharp
+        m_MethodName: PlaySoundOnRetainedManager
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ButtonPressed
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1790911717}
         m_TargetAssemblyTypeName: SceneHandler, Assembly-CSharp
         m_MethodName: PreviousScene
@@ -1771,6 +1865,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1784302594}
   - {fileID: 1790911716}
+  - {fileID: 1229517718}
   - {fileID: 1045175272}
   - {fileID: 1549956730}
   - {fileID: 1495876122}

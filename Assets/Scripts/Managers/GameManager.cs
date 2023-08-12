@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +9,10 @@ public class GameManager : MonoBehaviour
     private GameState previousState;
 
 
-    private void Awake() => main = this;
+    private void Awake()
+    {
+        main = this;
+    }
 
     private void OnEnable()
     {
@@ -25,7 +27,6 @@ public class GameManager : MonoBehaviour
         else
             ChangeState(GameState.Pause);
 
-        
     }
     private void FallBack()
     {
@@ -56,13 +57,6 @@ public class GameManager : MonoBehaviour
         }
 
         currentState = toState;
-
-    }
-
-    public void RestartGame()
-    {
-        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 

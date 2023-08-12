@@ -1,5 +1,4 @@
 using System;
-using UnityEngine.Audio;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -9,15 +8,29 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
-        DontDestroyOnLoad(this);
+        Singleton();
+        CreateAudioSources();
+        
+    }
 
-        if (main is null)
-            main = this;
-        else
-            Destroy(gameObject);
+    private void Singleton()
+    {
+        if (this is not RetainedAudioManager)
+        {
+            if (main is null)
+                main = this;
+            else
+                Destroy(this);
 
+            Debug.Log(main.name);
+        }
+
+    }
+
+    private void CreateAudioSources()
+    {
         foreach (Sound sound in sounds)
         {
             sound.source = gameObject.AddComponent<AudioSource>();
@@ -27,13 +40,23 @@ public class AudioManager : MonoBehaviour
             sound.source.loop = sound.loop;
             sound.source.playOnAwake = sound.playOnAwake;
         }
-
     }
+
 
     public void PlaySound(string name)
     {
         Sound sound = Array.Find(sounds, sound => sound.name == name);
-        sound.source?.Play();
+
+        if (sound != null)
+            sound.source.Play();
+        else
+            Debug.LogWarning($"Sound: {sound.name} registered as null");
+    }
+
+    private void OnDestroy()
+    {
+        if(this == main)
+            main = null;
     }
 
 }

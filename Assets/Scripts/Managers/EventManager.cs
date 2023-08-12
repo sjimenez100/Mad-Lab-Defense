@@ -5,7 +5,7 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager main;
 
-    public Action<Vector3> singleInputMoveEvent;
+    public Action<Direction.Directions> singleInputMoveEvent;
 
     public Action<int> singleInputOptionEvent;
 
@@ -44,8 +44,8 @@ public class EventManager : MonoBehaviour
     private void Awake() => main = this;
 
 
-    public void OnSingleInputMove(Vector3 direction) =>
-        singleInputMoveEvent?.Invoke(direction.normalized);
+    public void OnSingleInputMove(Direction.Directions direction) =>
+        singleInputMoveEvent?.Invoke(direction);
 
     public void OnSingleInputOption(int id) =>
         singleInputOptionEvent?.Invoke(id);

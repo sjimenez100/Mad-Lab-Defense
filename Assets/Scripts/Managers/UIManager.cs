@@ -83,13 +83,13 @@ public class UIManager : MonoBehaviour
     private void UpdateEnemiesKilled()
     {
         enemiesKilledNum++;
-        UIManager.main.SetKillText(enemiesKilledNum);
+        SetKillText(enemiesKilledNum);
     }
 
     private void UpdateWavesBegun()
     {
         waveNum++;
-        UIManager.main.SetWaveText(waveNum);
+        SetWaveText(waveNum);
     }
 
 

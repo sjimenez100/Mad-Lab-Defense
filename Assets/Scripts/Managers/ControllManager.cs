@@ -5,13 +5,13 @@ public class ControllManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.W))
-            EventManager.main.OnSingleInputMove(Vector3.up);
+            EventManager.main.OnSingleInputMove(Direction.Directions.Up);
         else if(Input.GetKeyDown(KeyCode.A))
-            EventManager.main.OnSingleInputMove(Vector3.left);
+            EventManager.main.OnSingleInputMove(Direction.Directions.Left);
         else if (Input.GetKeyDown(KeyCode.S))
-            EventManager.main.OnSingleInputMove(Vector3.down);
+            EventManager.main.OnSingleInputMove(Direction.Directions.Down);
         else if (Input.GetKeyDown(KeyCode.D))
-            EventManager.main.OnSingleInputMove(Vector3.right);
+            EventManager.main.OnSingleInputMove(Direction.Directions.Right);
 
         if (Input.GetKeyDown(KeyCode.H))
             EventManager.main.OnSingleInputOption(0);

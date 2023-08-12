@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Cannon : Entity, IDamageable
 {
+    
     [SerializeField]
     private Transform turnable;
 
@@ -10,9 +11,14 @@ public class Cannon : Entity, IDamageable
     private Transform firingTransform;
 
     [SerializeField]
+    private Sprite[] directionalSprites;
+
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
+
+    [SerializeField]
     private GameObject[] projectiles = new GameObject[Color.numColors];
 
-    private IEnumerator currentRoutine;
     private Color.ColorType currentColor;
 
     [SerializeField]
@@ -39,7 +45,7 @@ public class Cannon : Entity, IDamageable
         EventManager.main.gameOverEvent += FreezeCannon;
         EventManager.main.gamePauseEvent += FreezeCannon;
         EventManager.main.gamePlayEvent += UnFreezeCannon;
-
+       
     }
 
     private void Start()
@@ -95,30 +101,13 @@ public class Cannon : Entity, IDamageable
         
     }
 
-    private void RotateCannon(Vector3 waypoint)
+    private void RotateCannon(Direction.Directions direction)
     {
-        if (currentRoutine != null)
-            StopCoroutine(currentRoutine);
+        turnable.rotation = Quaternion.LookRotation(transform.forward, Direction.ToVector(direction));
+        //transform.rotation = Quaternion.FromToRotation(transform.up, Direction.ToVector(direction));
 
-        currentRoutine = RotateTo(waypoint);
-        StartCoroutine(currentRoutine);
-    }
-
-    private IEnumerator RotateTo(Vector3 waypoint)
-    {
-        waypoint.Normalize();
-
-        while (Vector3.Angle(turnable.up, waypoint) >= 0.05f)
-        {
-
-            turnable.rotation = Quaternion.Lerp(turnable.rotation,
-                Quaternion.LookRotation(transform.forward, waypoint),
-            rotationSpeed * Time.deltaTime);
-
-            yield return null;
-        }
-
-        yield break;
+        Sprite sprite = directionalSprites[(int)direction];
+        spriteRenderer.sprite = sprite;
     }
 
     private void ChangeProjectiles(int id)

@@ -44,53 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8a0d60ca57d3b4fb742e24e3ff6f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - name: SpawnableDeath
-    clip: {fileID: 8300000, guid: fb7b3465ffac5fb41ad06d4312447bf9, type: 3}
-    volume: 0.3
-    pitch: 1.5
-    loop: 0
-    playOnAwake: 0
-    source: {fileID: 0}
-  - name: BadHit
-    clip: {fileID: 8300000, guid: 64998238ddb5e504cb3937283f6b05d6, type: 3}
-    volume: 0.3
-    pitch: 1.5
-    loop: 0
-    playOnAwake: 0
-    source: {fileID: 0}
-  - name: CannonFire
-    clip: {fileID: 8300000, guid: ac83dcf4d4cc8cc499d4f09ef7a4a224, type: 3}
-    volume: 0.25
-    pitch: 1.5
-    loop: 0
-    playOnAwake: 0
-    source: {fileID: 0}
-  - name: PlayerDeath
-    clip: {fileID: 8300000, guid: 8d66368401bd0b64b85de1cf1792a3bb, type: 3}
-    volume: 0.6
-    pitch: 1.5
-    loop: 0
-    playOnAwake: 0
-    source: {fileID: 0}
-  - name: ChangeAmmo
-    clip: {fileID: 8300000, guid: 4a105818f4fb842409be82ed788ad6ec, type: 3}
-    volume: 0.15
-    pitch: 1.5
-    loop: 0
-    playOnAwake: 0
-    source: {fileID: 0}
-  - name: PlayerDamaged
-    clip: {fileID: 8300000, guid: 642786b46443f6b408f72d365d0177c3, type: 3}
-    volume: 0.4
-    pitch: 1.5
-    loop: 0
-    playOnAwake: 0
-    source: {fileID: 0}
-  - name: ButtonPressed
-    clip: {fileID: 8300000, guid: 69be1b4ae3fa54545810ea16f5718875, type: 3}
-    volume: 0.5
-    pitch: 1.5
-    loop: 0
-    playOnAwake: 0
-    source: {fileID: 0}
+  masterVolume: 35
+  profile: {fileID: 11400000, guid: db76b4f5fb68b27498864f1f31dd3dd9, type: 2}

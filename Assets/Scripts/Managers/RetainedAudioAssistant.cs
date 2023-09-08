@@ -1,12 +1,13 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class RetainedAudioAssistant : MonoBehaviour
+[CreateAssetMenu(menuName = "RetainedAudioAssistant")]
+public class RetainedAudioAssistant : ScriptableObject
 {
-    public static void PlaySoundOnRetainedManager(string sound)
-    {
-        RetainedAudioManager retainedManager = FindObjectOfType<RetainedAudioManager>();
-        if(retainedManager != null)
-            retainedManager.PlaySound(sound);
+    public Action<string> playRetainedSound;
 
-    }
+    public void OnPlayRetainedSound(string str) => playRetainedSound?.Invoke(str);
+
+
 }

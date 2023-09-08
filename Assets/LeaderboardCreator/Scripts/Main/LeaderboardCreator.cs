@@ -150,7 +150,7 @@ namespace Dan.Main
             callback += isSuccessful =>
             {
                 if (!isSuccessful)
-                    LogError("Uploading entry data failed!");
+                    Debug.LogWarning("Uploading entry data failed!");
                 else
                     Log("Successfully uploaded entry data to leaderboard!");
             };

@@ -198,7 +198,6 @@ GameObject:
   m_Component:
   - component: {fileID: 144322027}
   - component: {fileID: 144322026}
-  - component: {fileID: 144322025}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -206,18 +205,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &144322025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 144322024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00282c52202b38b4f878aaa5e6aa1b97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &144322026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,6 +1209,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -1664,7 +1661,7 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 37
+  - m_RefCount: 38
     m_Data: {fileID: 11400000, guid: 347847ff3aef04d4d813d6dae14e6a86, type: 2}
   - m_RefCount: 37
     m_Data: {fileID: 11400000, guid: ab1f52de8eb3ed74cadb11108c06aecb, type: 2}
@@ -1687,7 +1684,7 @@ Tilemap:
   - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: 98de07d7ec410c343832a2e74b241f66, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 37
+  - m_RefCount: 38
     m_Data: {fileID: -154241352, guid: 5acfd5e5c1bb0df4aaf59a8ced1507e1, type: 3}
   - m_RefCount: 37
     m_Data: {fileID: -1738129523, guid: 5acfd5e5c1bb0df4aaf59a8ced1507e1, type: 3}
@@ -1710,7 +1707,7 @@ Tilemap:
   - m_RefCount: 7
     m_Data: {fileID: 1382265590, guid: 5acfd5e5c1bb0df4aaf59a8ced1507e1, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 99
+  - m_RefCount: 100
     m_Data:
       e00: 1
       e01: 0
@@ -1729,7 +1726,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 99
+  - m_RefCount: 100
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -2245,6 +2242,7 @@ GameObject:
   - component: {fileID: 940515707}
   - component: {fileID: 940515706}
   - component: {fileID: 940515705}
+  - component: {fileID: 940515708}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -2311,14 +2309,14 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 940515706}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 144322025}
+      - m_Target: {fileID: 11400000, guid: 593152fede2f3cf4abe99ec5183883a8, type: 2}
         m_TargetAssemblyTypeName: RetainedAudioAssistant, Assembly-CSharp
-        m_MethodName: PlaySoundOnRetainedManager
+        m_MethodName: OnPlayRetainedSound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2378,6 +2376,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940515703}
   m_CullTransparentMesh: 1
+--- !u!114 &940515708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940515703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f70315f37c4e4458f1dfa364847d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &958779110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,7 +2641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: -125}
   m_SizeDelta: {x: 300, y: 337.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &996235310
@@ -2858,9 +2868,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 144322025}
+      - m_Target: {fileID: 11400000, guid: 593152fede2f3cf4abe99ec5183883a8, type: 2}
         m_TargetAssemblyTypeName: RetainedAudioAssistant, Assembly-CSharp
-        m_MethodName: PlaySoundOnRetainedManager
+        m_MethodName: OnPlayRetainedSound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3851,8 +3861,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 600, y: 130}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 600, y: 260}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1226592695
 MonoBehaviour:
@@ -3874,9 +3884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Game Title
-
-'
+  m_text: MAD LAB DEFENSE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d823c8e5b25c33f4f8766503ce2877b5, type: 2}
   m_sharedMaterial: {fileID: -3914164321439017826, guid: d823c8e5b25c33f4f8766503ce2877b5, type: 2}
@@ -4010,7 +4018,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: tUTORIAL
+  m_text: TUTORIAL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d823c8e5b25c33f4f8766503ce2877b5, type: 2}
   m_sharedMaterial: {fileID: -3914164321439017826, guid: d823c8e5b25c33f4f8766503ce2877b5, type: 2}
@@ -4379,9 +4387,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 144322025}
+      - m_Target: {fileID: 11400000, guid: 593152fede2f3cf4abe99ec5183883a8, type: 2}
         m_TargetAssemblyTypeName: RetainedAudioAssistant, Assembly-CSharp
-        m_MethodName: PlaySoundOnRetainedManager
+        m_MethodName: OnPlayRetainedSound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4700,7 +4708,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.5803922, g: 0.6901961, b: 0.7607844, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

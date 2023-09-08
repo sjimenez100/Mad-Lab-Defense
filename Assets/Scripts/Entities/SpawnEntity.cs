@@ -11,7 +11,7 @@ public abstract class SpawnEntity : Entity
     protected SpriteRenderer sprite;
 
     protected Rigidbody2D rb;
-    protected Collider2D collider;
+    protected new Collider2D collider;
 
     [SerializeField]
     private float speedMultiple;

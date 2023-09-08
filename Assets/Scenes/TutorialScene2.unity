@@ -291,7 +291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -101}
+  m_AnchoredPosition: {x: 0, y: -47.49}
   m_SizeDelta: {x: 470, y: 80}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &175329556
@@ -477,8 +477,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1790911718}
+        m_TargetAssemblyTypeName: PlayButtonAssistant, Assembly-CSharp
+        m_MethodName: SetInteractable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 593152fede2f3cf4abe99ec5183883a8, type: 2}
         m_TargetAssemblyTypeName: RetainedAudioAssistant, Assembly-CSharp
-        m_MethodName: PlaySoundOnRetainedManager
+        m_MethodName: OnPlayRetainedSound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -873,8 +885,8 @@ RectTransform:
   m_Children:
   - {fileID: 175329555}
   - {fileID: 755975881}
-  - {fileID: 295094691}
   - {fileID: 1910302512}
+  - {fileID: 295094691}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -916,7 +928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -203}
+  m_AnchoredPosition: {x: 0, y: -151.1}
   m_SizeDelta: {x: 800, y: 219.09998}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &755975882
@@ -1223,6 +1235,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 984254720088834933, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 11400000, guid: db76b4f5fb68b27498864f1f31dd3dd9, type: 2}
     - target: {fileID: 1579170438663876268, guid: bfb56b2572d25b548a6ed7aaae3e4f9a, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -1711,7 +1727,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1790911712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00282c52202b38b4f878aaa5e6aa1b97, type: 3}
+  m_Script: {fileID: 11500000, guid: 00cc917de0b28e942ad6f404b40a43cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1910302511
@@ -1798,8 +1814,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1790911718}
+        m_TargetAssemblyTypeName: PlayButtonAssistant, Assembly-CSharp
+        m_MethodName: SetInteractable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 593152fede2f3cf4abe99ec5183883a8, type: 2}
         m_TargetAssemblyTypeName: RetainedAudioAssistant, Assembly-CSharp
-        m_MethodName: PlaySoundOnRetainedManager
+        m_MethodName: OnPlayRetainedSound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
